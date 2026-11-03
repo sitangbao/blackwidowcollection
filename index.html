@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Natasha Romanoff official merchandise collection archive">
+  <title>Natasha Romanoff — Collection Archive</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-top"><span>ROMANOFF ARCHIVE</span><span>PERSONAL COLLECTION · EST. 2026</span></div>
+    <div class="hero-content">
+      <p class="eyebrow">NATASHA ROMANOFF / BLACK WIDOW</p>
+      <h1>COLLECTION<br><em>ARCHIVE</em></h1>
+      <p class="hero-sub">娜塔莎·罗曼诺夫｜官方周边个人收藏图鉴</p>
+      <div class="hero-rule"></div>
+      <p class="hero-note">A PERSONAL ARCHIVE OF OFFICIAL MERCHANDISE</p>
+    </div>
+    <div class="hero-mark" aria-hidden="true">N°</div>
+  </header>
+
+  <main>
+    <section class="stats" aria-label="收藏统计">
+      <div><strong id="total-count">0</strong><span>COLLECTIBLES</span></div>
+      <div><strong id="region-count">0</strong><span>REGIONS</span></div>
+      <div><strong id="category-count">0</strong><span>CATEGORIES</span></div>
+    </section>
+
+    <section class="intro">
+      <div>
+        <p class="section-kicker">THE COLLECTION</p>
+        <h2>收藏目录 <span>/ INDEX</span></h2>
+      </div>
+      <p class="intro-copy">记录每一件娜塔莎官方周边。按发行地区与商品类别浏览，也可以搜索名称。</p>
+    </section>
+
+    <section class="controls" aria-label="筛选收藏">
+      <label class="search-wrap"><span>⌕</span><input id="search" type="search" placeholder="搜索商品名称、系列或备注…" autocomplete="off"></label>
+      <div class="filter-row">
+        <label><span>发行地区</span><select id="region-filter"><option value="全部">全部地区</option><option value="日谷">日谷</option><option value="美谷">美谷</option><option value="欧谷">欧谷</option><option value="其他">其他</option></select></label>
+        <label><span>商品类别</span><select id="category-filter"><option value="全部">全部类别</option></select></label>
+        <label><span>排序</span><select id="sort-filter"><option value="default">默认顺序</option><option value="name">名称 A–Z</option><option value="year-new">年份由新到旧</option><option value="year-old">年份由旧到新</option></select></label>
+      </div>
+      <div id="category-chips" class="chips" aria-label="快速类别筛选"></div>
+    </section>
+
+    <section class="catalog-head">
+      <div><p class="section-kicker">ARCHIVE RECORDS</p><h2 id="catalog-title">全部收藏</h2></div>
+      <p id="result-count">显示 0 件藏品</p>
+    </section>
+
+    <section id="catalog" class="catalog-grid" aria-live="polite"></section>
+    <div id="empty-state" class="empty-state" hidden>
+      <span>✳</span><h3>暂时没有找到藏品</h3><p>试试其他关键词或筛选条件。</p>
+      <button id="reset-filters" class="text-button">清除筛选</button>
+    </div>
+
+    <section class="howto">
+      <p class="section-kicker">ARCHIVE NOTES</p>
+      <h2>关于这份图鉴</h2>
+      <p>本网站为个人收藏整理与展示用途，与 Marvel、Disney 或相关权利方无隶属关系。商品图片及商标归其各自权利人所有。</p>
+      <p class="small-note">添加藏品：编辑 <code>data.js</code>，按照示例填写商品资料，并将图片放入 <code>assets</code> 文件夹。</p>
+    </section>
+  </main>
+
+  <footer><span>BLACK WIDOW · NATASHA ROMANOFF</span><span>PERSONAL COLLECTION ARCHIVE</span></footer>
+
+  <dialog id="item-dialog">
+    <button class="dialog-close" id="dialog-close" aria-label="关闭">×</button>
+    <div class="dialog-image-wrap"><img id="dialog-image" alt=""></div>
+    <div class="dialog-info">
+      <p class="section-kicker" id="dialog-region"></p>
+      <h2 id="dialog-name"></h2>
+      <p id="dialog-category" class="dialog-category"></p>
+      <dl id="dialog-details"></dl>
+      <p id="dialog-notes" class="dialog-notes"></p>
+    </div>
+  </dialog>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
